@@ -84,10 +84,10 @@ var S={items:[],meals:{},photos:[]},user=null,ready=false,subbed=false,tab={},mo
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function toast(m){var t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},3500)}
-function logoImg(){return'<img class="logo" src="'+LOGO+'" alt="Hygge, el nostre racó de caliu hogar">'}
+function logoImg(){return'<img class="logo" src="'+LOGO+'" alt="Hygge, el nostre racó de caliu">'}
 
 /* ---------- Acceso ---------- */
-function loginView(){return logoImg()+'<p class="lead">Entra con tu correo y te enviamos un enlace. Sin contraseñas.</p><div class="add"><input type="text" id="em" inputmode="email" autocomplete="email" placeholder="tu correo" aria-label="Tu correo" onkeydown="if(event.key===\'Enter\')send()"><button class="btn" onclick="send()">Enviar enlace</button></div><p class="lead" id="lm"></p>'}
+function loginView(){return logoImg()+'<p class="lead">Entra con tu correo Sin contraseñas.</p><div class="add"><input type="text" id="em" inputmode="email" autocomplete="email" placeholder="tu correo" aria-label="Tu correo" onkeydown="if(event.key===\'Enter\')send()"><button class="btn" onclick="send()">Enviar enlace</button></div><p class="lead" id="lm"></p>'}
 function send(){var e=$("em").value.trim();if(!e)return;$("lm").textContent="Enviando…";
 SB.auth.signInWithOtp({email:e,options:{emailRedirectTo:location.origin+location.pathname}}).then(function(r){$("lm").textContent=r.error?"No se pudo enviar: "+r.error.message:"Listo. Abre el enlace que te hemos enviado al correo."})}
 SB.auth.onAuthStateChange(function(ev,s){setTimeout(function(){ready=true;user=s?s.user:null;if(user){refresh();sub()}else render()},0)});
