@@ -1,0 +1,10 @@
+/* Sección Menú del mes (calendario) */
+.cal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cal-h h3{font-size:26px;text-transform:capitalize}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.dn{text-align:center;font-size:12px;color:var(--soft);font-weight:700}
+.d{background:var(--card);border:1px solid var(--line);border-radius:8px;min-height:64px;padding:3px;font:inherit;font-size:9.5px;line-height:1.15;text-align:left;color:var(--ink);cursor:pointer;overflow:hidden}
+.d i{display:block;font:700 12px Nunito,sans-serif;font-style:normal;margin-bottom:2px}
+.d.today{border:2px solid var(--flame)}.d.void{visibility:hidden}
+.d span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.d .l{color:var(--gold)}

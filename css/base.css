@@ -1,0 +1,39 @@
+/* Estética común de Hygge: colores, tipografías, tiles, botones, listas, hojas y avisos */
+:root{--bg:#f8f7f2;--card:#fffdf8;--ink:#4a2f20;--soft:#8a7766;--wood:#5b3a28;--gold:#b8924a;--flame:#e8892b;--line:#e6dccb;--on-wood:#fbf3e4;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1611;--card:#2a1e17;--ink:#f3e8d6;--soft:#b9a48d;--wood:#7a4f35;--gold:#d3ad66;--flame:#f0a04b;--line:#43322a;--on-wood:#fbf3e4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1f1611;--card:#2a1e17;--ink:#f3e8d6;--soft:#b9a48d;--wood:#7a4f35;--gold:#d3ad66;--flame:#f0a04b;--line:#43322a;--on-wood:#fbf3e4;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Nunito,system-ui,sans-serif;min-height:100vh}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;margin:0;font-weight:700}
+main{max-width:640px;margin:0 auto;padding:16px 16px 48px}
+.logo{display:block;width:min(220px,60%);margin:8px auto 4px;border-radius:24px}
+.lead{text-align:center;color:var(--soft);margin:0 0 20px;font-size:15px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 12px;text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:6px;min-height:104px}
+.tile:nth-child(3n+2){border-radius:18px 18px 18px 6px}
+.tile .e{font-size:28px;line-height:1}.tile b{font-family:"Cormorant Garamond",Georgia,serif;font-size:21px;line-height:1.1}
+.tile small{color:var(--soft);font-size:13px}
+.tile:active{background:var(--line)}
+.top{display:flex;align-items:center;gap:10px;margin:4px 0 14px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:8px 0;z-index:5}
+.back{border:0;background:var(--wood);color:var(--on-wood);width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer}
+.top h2{font-size:30px}
+button:focus-visible,input:focus-visible,.tile:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.seg{display:flex;background:var(--line);border-radius:999px;padding:4px;margin-bottom:14px}
+.seg button{flex:1;border:0;background:none;font:600 15px Nunito,sans-serif;color:var(--soft);padding:8px;border-radius:999px;cursor:pointer}
+.seg button.on{background:var(--wood);color:var(--on-wood)}
+.add{display:flex;gap:8px;margin-bottom:14px}
+input[type=text]{flex:1;min-width:0;font:inherit;padding:11px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink)}
+.btn{border:0;background:var(--flame);color:#3a1d0a;font:700 15px Nunito,sans-serif;padding:0 18px;border-radius:12px;cursor:pointer;min-height:44px}
+.sec{font-size:20px;margin:18px 0 8px;color:var(--soft)}
+.row{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.row label{flex:1;cursor:pointer}.row.done label{text-decoration:line-through;color:var(--soft)}
+.row input{width:22px;height:22px;accent-color:var(--wood)}
+.x{border:0;background:none;color:var(--soft);font-size:22px;cursor:pointer;padding:0 4px}
+.empty{color:var(--soft);font-style:italic;padding:6px 2px}
+.sheet{position:fixed;inset:0;background:rgba(30,18,10,.55);display:flex;align-items:flex-end;justify-content:center;z-index:20}
+.sheet>div{background:var(--bg);width:100%;max-width:640px;border-radius:22px 22px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+.sheet h3{font-size:26px;margin-bottom:12px}.sheet label{display:block;font-weight:700;margin:8px 0 4px;font-size:14px}
+.sheet .btn{margin-top:14px;width:100%}
+.foot{text-align:center;color:var(--soft);font-size:12px;margin-top:28px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--wood);color:var(--on-wood);padding:10px 16px;border-radius:12px;z-index:30;max-width:90%}

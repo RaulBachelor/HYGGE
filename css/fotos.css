@@ -1,0 +1,5 @@
+/* Sección Fotos (galería y botón de subida) */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+.gal img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;cursor:pointer}
+.file{position:relative;overflow:hidden;display:inline-flex;align-items:center}
+.file input{position:absolute;inset:0;opacity:0;cursor:pointer}
